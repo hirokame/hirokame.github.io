@@ -177,8 +177,9 @@ h1 {
     box-shadow: 0 0 15px rgba(2, 132, 199, 0.1);
 }
 
-/* Publications Section */
-.publications-section {
+/* Publications and Projects Sections */
+.publications-section,
+.projects-section {
     padding: 5rem 0;
 }
 
@@ -306,5 +307,135 @@ footer {
 
     .social-links {
         justify-content: center;
+    }
+}
+
+/* Projects Stack View */
+.projects-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.project-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.project-row:hover {
+    transform: translateY(-8px);
+    border-color: rgba(2, 132, 199, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.project-image {
+    flex: 0 0 45%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+}
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-row:hover .project-image img {
+    transform: scale(1.03);
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.project-info p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.project-citation {
+    font-size: 1rem !important;
+    color: var(--accent-primary) !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem !important;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.project-citation::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+    top: -2px;
+}
+
+.project-github {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: rgba(2, 132, 199, 0.08);
+    color: var(--accent-primary);
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.project-github:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(2, 132, 199, 0.2);
+}
+
+@media (max-width: 900px) {
+    .project-row {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .project-image {
+        flex: 0 0 100%;
+        width: 100%;
     }
 }
