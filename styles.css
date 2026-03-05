@@ -338,7 +338,8 @@ footer {
 }
 
 .project-image {
-    flex: 0 0 45%;
+    flex: 0 1 auto;
+    max-width: 45%;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -359,7 +360,8 @@ footer {
 }
 
 .project-image img {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     height: auto;
     display: block;
     object-fit: cover;
@@ -435,7 +437,7 @@ footer {
     }
 
     .project-image {
-        flex: 0 0 100%;
-        width: 100%;
+        max-width: 100%;
+        width: auto;
     }
 }
